@@ -43,3 +43,13 @@ input {
   width: 50vw;
   height: 45px;
 }
+.messages {
+  color: rgb(255, 255, 255) !important;
+  background-color: rgb(38, 38, 38);
+  border-radius: 10px;
+  width: 70vw;
+  height: auto;
+}
+.messages:hover {
+  background-color: #141414;
+}

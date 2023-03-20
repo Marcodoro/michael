@@ -1,7 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './App.css';
+import './App.scss';
+
 
 export default function App() {
+  
+  const [userlogin, setlogin] = useState(false);
+
+  return (
+    <div className="main">
+      {userlogin ? <Login /> : <Chat />}
+    </div>
+  )
+}
+
+function Login() {
+  return (
+    <div className='login'>
+      Login
+      <button type="button">Login</button>
+    </div>
+  )
+}
+
+function Chat() {
   const [text, setText] = useState('');
   const [results, setResults] = useState([]);
   const dummy = document.querySelector('.dummy');
@@ -13,7 +34,7 @@ export default function App() {
   };
 
   const setResult = (text) => {
-    const newResult = <h1 key={results.length}>{text}</h1>;
+    const newResult = <h1 className='messages' key={results.length}>{text}</h1>;
     setResults([...results, newResult]);
     setText('');
   };
