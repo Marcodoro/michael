@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 
 export default function App() {
   const [text, setText] = useState('');
   const [results, setResults] = useState([]);
+  const dummy = document.querySelector('.dummy');
 
   const handleClick = () => {
+    dummy.scrollIntoView({ behavior: 'smooth' });
     console.log(text);
     setResult(text);
   };
@@ -21,12 +23,17 @@ export default function App() {
       handleClick();
     }
   };
-
+  
   return (
     <div className="App">
-      {results}
+      <div className="chat">
+         {results}
+      </div>
+      <div className="write">
       <button onClick={handleClick}>Send</button>
       <input type="text" value={text} onChange={(e) => setText(e.target.value)} onKeyDown={handleKeyDown} />
+      </div>
+      <span className="dummy"></span>
     </div>
   );
 }
