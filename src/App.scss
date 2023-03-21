@@ -49,6 +49,12 @@ input {
   border-radius: 10px;
   width: 70vw;
   height: auto;
+  &::before {
+    content: '';
+    width: 10px;
+    height: 2px;
+    r
+  }
 }
 .messages:hover {
   background-color: #141414;

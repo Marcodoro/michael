@@ -14,10 +14,11 @@ export default function App() {
 }
 
 function Login() {
+  function loginuser() {
+  }
   return (
     <div className='login'>
-      Login
-      <button type="button">Login</button>
+      login to continue
     </div>
   )
 }
@@ -32,10 +33,12 @@ function Chat() {
     console.log(text);
     setResult(text);
   };
-
+  const deletemsg = () => {
+    alert('you sure you want to delete');
+  };
   const setResult = (text) => {
-    const newResult = <h1 className='messages' key={results.length}>{text}</h1>;
-    setResults([...results, newResult]);
+    const newResult = <h1 className='messages' onClick={deletemsg} key={results.length}>{text}</h1>;
+    setResults([results, newResult]);
     setText('');
   };
 
